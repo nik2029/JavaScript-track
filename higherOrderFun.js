@@ -35,3 +35,9 @@ console.log(sameAge);
 //output: 
 //{15: 1, 17: 1, 19: 1, 22: 1, 25: 1, 
 // 27: 1, 28: 1, 30: 1, 35: 1, 40: 1}
+
+
+//Find the first name of those people age is >35
+
+const fName=users.filter(x=>x.age<35).map((x)=>x.firstName);
+console.log(fName);
