@@ -43,4 +43,5 @@ console.log(sameAge);
 const fName=users.filter(x=>x.age<35).map((x)=>x.firstName);
 console.log(fName);
 // Output:  ['Rahul', 'Amit', 'Priya', 'Neha', 
-//           'Rohit', 'Anjali', 'Sneha', 'Pooja']
+//           'Rohit', 'Anjali', 'Sneha', 'Pooja'] 
+//
