@@ -19,4 +19,19 @@ console.log(fullName);
 // Vikas Mishra', 'Sneha Patel', 'Karan Joshi', '
 // Pooja Agarwal']
 
-// find how many people exist with same age
+// find how many people  with same age
+
+const sameAge=users.reduce(function(acc,curr){
+    if(acc[curr.age]){
+        acc[curr.age]= ++acc[curr.age]
+
+    }else{
+        acc[curr.age]=1;
+    }
+    return acc;
+},{})
+console.log(sameAge);
+
+//output: 
+//{15: 1, 17: 1, 19: 1, 22: 1, 25: 1, 
+// 27: 1, 28: 1, 30: 1, 35: 1, 40: 1}
