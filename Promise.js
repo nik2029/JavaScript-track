@@ -82,3 +82,33 @@ Promise.reject("error with thhis program")
     
 
 });
+
+
+// printing orderid using promise
+
+const cart=["t-shirt","pant's","shirt"];
+const promise=createOrder(cart);
+promise.then(function(orderId){
+    console.log(orderId);
+    
+});
+
+function createOrder(cart){
+    const pr=new Promise(function(success,reject){
+        if(!orderValidate){
+            const err=new Error("cart is not valid");
+            reject(err);
+        }
+         orderId=12356;
+        if(orderId){
+            setTimeout(() => {
+                success(orderId);
+            }, 3000);
+        }
+    
+    });
+    return pr;
+}
+function orderValidate(cart){
+    return true;
+}
