@@ -166,7 +166,7 @@ function proceedToPay(orderId){
 }
 function showOrderSummary(orderId){
     return new Promise(function(resolve,reject){
-        resolve(orderId+" "+"this is your order summary");
+        resolve("this is your order summary");
     })
 }
 let wallet=2456;
