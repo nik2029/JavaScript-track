@@ -86,29 +86,92 @@ Promise.reject("error with thhis program")
 
 // printing orderid using promise
 
-const cart=["t-shirt","pant's","shirt"];
-const promise=createOrder(cart);
-promise.then(function(orderId){
-    console.log(orderId);
+// const cart=["t-shirt","pant's","shirt"];
+// const promise=createOrder(cart);
+// promise.then(function(orderId){
+//     console.log(orderId);
     
-});
+// });
+
+// function createOrder(cart){
+//     const pr=new Promise(function(success,reject){
+//         if(!orderValidate){
+//             const err=new Error("cart is not valid");
+//             reject(err);
+//         }
+//          orderId=12356;
+//         if(orderId){
+//             setTimeout(() => {
+//                 success(orderId);
+//             }, 3000);
+//         }
+    
+//     });
+//     return pr;
+// }
+// function orderValidate(cart){
+//     return true;
+// }
+
+
+// write promiise for create order/proceedtopay/showOrder summary/show wallet balance
+const cart=["apple","banana","mango"];
+const orderId=1563;
+createOrder(cart)
+.then(function(orderId){
+    console.log(orderId);
+    return orderId;
+})
+.then(function(orderId){
+    return proceedToPay(orderId);
+})
+.then(function(payentdetial){
+    console.log(payentdetial);
+    
+})
+.then(function(orderId){
+    return showOrderSummary(orderId);
+})
+.then(function(showSummary){
+    console.log(showSummary);
+    
+})
+.then(function(wallet){
+    return updateWallet(wallet);
+})
+.then(function(showWallet){
+    console.log(showWallet);
+    
+})
+.catch(function(err){
+    console.log(err.message);
+    
+})
+
+
+
+
+
 
 function createOrder(cart){
-    const pr=new Promise(function(success,reject){
-        if(!orderValidate){
-            const err=new Error("cart is not valid");
-            reject(err);
-        }
-         orderId=12356;
-        if(orderId){
-            setTimeout(() => {
-                success(orderId);
-            }, 3000);
-        }
-    
-    });
-    return pr;
+    return new Promise(function(resolve,reject){
+        resolve(orderId+" "+"order created");
+    })
 }
-function orderValidate(cart){
-    return true;
+
+function proceedToPay(orderId){
+    return new Promise(function(resolve,reject){
+        resolve(orderId+" "+" proceed to payment");
+    })
+}
+function showOrderSummary(orderId){
+    return new Promise(function(resolve,reject){
+        resolve(orderId+" "+"this is your order summary");
+    })
+}
+let wallet=2456;
+function updateWallet(){
+    return new Promise(function(resolve,reject){
+        resolve("your balance is :"+wallet);
+    })
 }
