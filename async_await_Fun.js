@@ -44,3 +44,17 @@ async function getData() {
 }
 getData();
 
+
+const API_URL="https://api.github.com/users/nik2029";
+async function findData(){
+    try{ 
+    const data=await fetch(API_URL);
+    const jsnVal= await data.json();
+    console.log(jsnVal);}
+    catch (err){
+        console.log(err + "data is not loading");
+        
+    }
+}
+findData();
+
